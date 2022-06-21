@@ -127,7 +127,10 @@ export default function Contact() {
                 <Box borderRadius="lg">
                   <Box m={8}>
                     <VStack spacing={5}>
-                      <Stack direction={"row"} spacing={4}>
+                      <Stack
+                        direction={["column", "column", "row"]}
+                        spacing={4}
+                      >
                         <FormControl id="name">
                           <FormLabel>Nombre Completo</FormLabel>
                           <InputGroup borderColor="#E0E1E7">
@@ -150,7 +153,10 @@ export default function Contact() {
                           </InputGroup>
                         </FormControl>
                       </Stack>
-                      <Stack direction={"row"} spacing={4}>
+                      <Stack
+                        direction={["column", "column", "row"]}
+                        spacing={4}
+                      >
                         <FormControl id="telefono">
                           <FormLabel>Telefono</FormLabel>
                           <InputGroup borderColor="#E0E1E7">
