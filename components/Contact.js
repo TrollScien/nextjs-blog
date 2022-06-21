@@ -127,51 +127,53 @@ export default function Contact() {
                 <Box borderRadius="lg">
                   <Box m={8}>
                     <VStack spacing={5}>
-                      <FormControl id="name">
-                        <FormLabel>Nombre Completo</FormLabel>
-                        <InputGroup borderColor="#E0E1E7">
-                          <InputLeftElement
-                            pointerEvents="none"
-                            children={<BsPerson color="gray.800" />}
-                          />
-                          <Input type="text" size="md" />
-                        </InputGroup>
-                      </FormControl>
+                      <Stack direction={"row"} spacing={4}>
+                        <FormControl id="name">
+                          <FormLabel>Nombre Completo</FormLabel>
+                          <InputGroup borderColor="#E0E1E7">
+                            <InputLeftElement
+                              pointerEvents="none"
+                              children={<BsPerson color="gray.800" />}
+                            />
+                            <Input type="text" size="md" />
+                          </InputGroup>
+                        </FormControl>
 
-                      <FormControl id="name">
-                        <FormLabel>Correo</FormLabel>
-                        <InputGroup borderColor="#E0E1E7">
-                          <InputLeftElement
-                            pointerEvents="none"
-                            children={<MdOutlineEmail color="gray.800" />}
-                          />
-                          <Input type="text" size="md" />
-                        </InputGroup>
-                      </FormControl>
+                        <FormControl id="name">
+                          <FormLabel>Correo</FormLabel>
+                          <InputGroup borderColor="#E0E1E7">
+                            <InputLeftElement
+                              pointerEvents="none"
+                              children={<MdOutlineEmail color="gray.800" />}
+                            />
+                            <Input type="text" size="md" />
+                          </InputGroup>
+                        </FormControl>
+                      </Stack>
+                      <Stack direction={"row"} spacing={4}>
+                        <FormControl id="telefono">
+                          <FormLabel>Telefono</FormLabel>
+                          <InputGroup borderColor="#E0E1E7">
+                            <InputLeftElement
+                              pointerEvents="none"
+                              children={<BsTelephone color="gray.800" />}
+                            />
+                            <Input type="text" size="md" />
+                          </InputGroup>
+                        </FormControl>
 
-                      <FormControl id="telefono">
-                        <FormLabel>Telefono</FormLabel>
-                        <InputGroup borderColor="#E0E1E7">
-                          <InputLeftElement
-                            pointerEvents="none"
-                            children={<BsTelephone color="gray.800" />}
-                          />
-                          <Input type="text" size="md" />
-                        </InputGroup>
-                      </FormControl>
+                        <FormControl id="asunto">
+                          <FormLabel>Asunto</FormLabel>
+                          <InputGroup borderColor="#E0E1E7">
+                            <InputLeftElement
+                              pointerEvents="none"
+                              children={<BsMailbox color="gray.800" />}
+                            />
 
-                      <FormControl id="asunto">
-                        <FormLabel>Asunto</FormLabel>
-                        <InputGroup borderColor="#E0E1E7">
-                          <InputLeftElement
-                            pointerEvents="none"
-                            children={<BsMailbox color="gray.800" />}
-                          />
-
-                          <Input type="text" size="md" />
-                        </InputGroup>
-                      </FormControl>
-
+                            <Input type="text" size="md" />
+                          </InputGroup>
+                        </FormControl>
+                      </Stack>
                       <FormControl id="Servicios">
                         <FormLabel>Servicios</FormLabel>
                         <InputGroup borderColor="#E0E1E7">
