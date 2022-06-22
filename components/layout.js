@@ -5,7 +5,9 @@ import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 import Hero from "./Hero";
 import Footer from "./Footer";
-import Contact from "./Contact";
+import Contact2 from "./Contact2";
+import Features from "./Features";
+import Testimonials from "./Testimonials";
 
 const name = "Pepito";
 export const siteTitle = "Next.js Sample Website";
@@ -74,7 +76,9 @@ export default function Layout({ children, home }) {
           </div>
         )}
       </div>
-      <Contact />
+      <Testimonials />
+      <Features />
+      <Contact2 />
       <Footer />
     </div>
   );

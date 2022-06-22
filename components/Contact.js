@@ -13,6 +13,8 @@ import {
   WrapItem,
   FormControl,
   FormLabel,
+  FormErrorMessage,
+  FormHelperText,
   Input,
   Select,
   InputGroup,
@@ -101,15 +103,15 @@ export default function Contact() {
                       variant="ghost"
                       size="lg"
                       isRound={true}
-                      _hover={{ bg: "#0D74FF" }}
+                      _hover={{ bg: "#3c5a99", color: "white" }}
                       icon={<MdFacebook size="28px" />}
                     />
                     <IconButton
-                      aria-label="github"
+                      aria-label="whatsapp"
                       variant="ghost"
                       size="lg"
                       isRound={true}
-                      _hover={{ bg: "#0D74FF" }}
+                      _hover={{ bg: "#25D366", color: "white" }}
                       icon={<BsWhatsapp size="28px" />}
                     />
                     <IconButton
@@ -117,7 +119,7 @@ export default function Contact() {
                       variant="ghost"
                       size="lg"
                       isRound={true}
-                      _hover={{ bg: "#0D74FF" }}
+                      _hover={{ bg: "#833AB4", color: "white" }}
                       icon={<BsInstagram size="28px" />}
                     />
                   </HStack>
@@ -131,7 +133,7 @@ export default function Contact() {
                         direction={["column", "column", "row"]}
                         spacing={4}
                       >
-                        <FormControl id="name">
+                        <FormControl id="name" isRequired>
                           <FormLabel>Nombre Completo</FormLabel>
                           <InputGroup borderColor="#E0E1E7">
                             <InputLeftElement
@@ -142,14 +144,14 @@ export default function Contact() {
                           </InputGroup>
                         </FormControl>
 
-                        <FormControl id="name">
-                          <FormLabel>Correo</FormLabel>
+                        <FormControl id="emailForm" isRequired>
+                          <FormLabel htmlFor="email">Correo</FormLabel>
                           <InputGroup borderColor="#E0E1E7">
                             <InputLeftElement
                               pointerEvents="none"
                               children={<MdOutlineEmail color="gray.800" />}
                             />
-                            <Input type="text" size="md" />
+                            <Input type="email" size="md" id="email" />
                           </InputGroup>
                         </FormControl>
                       </Stack>
@@ -168,7 +170,7 @@ export default function Contact() {
                           </InputGroup>
                         </FormControl>
 
-                        <FormControl id="asunto">
+                        <FormControl id="asunto" isRequired>
                           <FormLabel>Asunto</FormLabel>
                           <InputGroup borderColor="#E0E1E7">
                             <InputLeftElement
@@ -180,7 +182,7 @@ export default function Contact() {
                           </InputGroup>
                         </FormControl>
                       </Stack>
-                      <FormControl id="Servicios">
+                      <FormControl id="Servicios" isRequired>
                         <FormLabel>Servicios</FormLabel>
                         <InputGroup borderColor="#E0E1E7">
                           <Select
@@ -200,7 +202,7 @@ export default function Contact() {
                         </InputGroup>
                       </FormControl>
 
-                      <FormControl id="message">
+                      <FormControl id="mensaje" isRequired>
                         <FormLabel>Mensaje</FormLabel>
                         <Textarea
                           borderColor="gray.300"
@@ -217,7 +219,7 @@ export default function Contact() {
                           color="white"
                           _hover={{}}
                         >
-                          Enviar Message
+                          Enviar Mensaje
                         </Button>
                       </FormControl>
                     </VStack>
