@@ -55,7 +55,7 @@ const TestimonialHeading = ({ children }) => {
 const TestimonialText = ({ children }) => {
   return (
     <Text
-      textAlign={"center"}
+      textAlign={"justify"}
       color={useColorModeValue("gray.600", "gray.400")}
       fontSize={"sm"}
     >
@@ -83,7 +83,7 @@ export default function WithSpeechBubbles() {
     <Box bg={useColorModeValue("gray.100", "gray.700")}>
       <Container maxW={"7xl"} py={16} as={Stack} spacing={12}>
         <Stack spacing={0} align={"center"}>
-          <Heading>Our Clients Speak</Heading>
+          <Heading>Testimonios De Nuestros Clientes</Heading>
           <Text>We have been working with clients around the world</Text>
         </Stack>
         <Stack
@@ -94,47 +94,51 @@ export default function WithSpeechBubbles() {
             <TestimonialContent>
               <TestimonialHeading>Efficient Collaborating</TestimonialHeading>
               <TestimonialText>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor
-                neque sed imperdiet nibh lectus feugiat nunc sem.
+                Nuestro Principal proveedor de comunicación e Internet en
+                Yaracuy y Barquisimeto, brindándonos siempre una atención
+                oportuna y eficaz; vital para el desarrollo de nuestra operación
               </TestimonialText>
             </TestimonialContent>
             <TestimonialAvatar
               src={
                 "https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80"
               }
-              name={"Jane Cooper"}
-              title={"CEO at ABC Corporation"}
+              name={"Sistemas Lider"}
+              title={"Hiper Lider"}
             />
           </Testimonial>
           <Testimonial>
             <TestimonialContent>
               <TestimonialHeading>Intuitive Design</TestimonialHeading>
               <TestimonialText>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor
-                neque sed imperdiet nibh lectus feugiat nunc sem.
+                La corporación Alcoholes del Caribe, agradecido con ustedes por
+                el excelente servicio que nos prestan, conexión estable y
+                atención inmediata, lo que los caracteriza por ser una empresa
+                con servicio de calidad.
               </TestimonialText>
             </TestimonialContent>
             <TestimonialAvatar
               src={
                 "https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80"
               }
-              name={"Jane Cooper"}
-              title={"CEO at ABC Corporation"}
+              name={"Alexis Aponte"}
+              title={"Corporación Alcoholes del Caribe S.A."}
             />
           </Testimonial>
           <Testimonial>
             <TestimonialContent>
               <TestimonialHeading>Mindblowing Service</TestimonialHeading>
               <TestimonialText>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor
-                neque sed imperdiet nibh lectus feugiat nunc sem.
+                Excelente atencion y servicio. Ha resultado ser más eficiente y
+                confiable que los otros operadores que hay que en el área
+                (digitel, movistar, cantv, etc).
               </TestimonialText>
             </TestimonialContent>
             <TestimonialAvatar
               src={
                 "https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80"
               }
-              name={"Jane Cooper"}
+              name={"Rafael Carvallo"}
               title={"CEO at ABC Corporation"}
             />
           </Testimonial>

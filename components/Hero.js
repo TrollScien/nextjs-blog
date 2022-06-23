@@ -29,7 +29,7 @@ export default function WithBackgroundImage() {
             lineHeight={1.2}
             fontSize={useBreakpointValue({ base: "3xl", md: "4xl" })}
           >
-            El internet más estable. <br /> El internet que te mereces.
+            El internet que te mereces.
           </Text>
           <Stack direction={"row"}>
             <Button

@@ -1,76 +1,97 @@
-import { ReactNode } from "react";
-import Image from "next/image";
 import {
   Box,
+  chakra,
   Container,
   Link,
-  SimpleGrid,
   Stack,
-  Spacer,
   Text,
   useColorModeValue,
+  VisuallyHidden,
 } from "@chakra-ui/react";
+import { FaInstagram, FaFacebook, FaWhatsapp } from "react-icons/fa";
+import Logo from "../components/svg/Logo";
 
-import Logo from "./svg/Logo";
-
-const ListHeader = ({ children }) => {
+const SocialButton = ({ children, label, href, hover }) => {
   return (
-    <Text fontWeight={"500"} fontSize={"lg"} mb={2}>
+    <chakra.button
+      bg={useColorModeValue("blackAlpha.100", "whiteAlpha.100")}
+      rounded={"full"}
+      w={8}
+      h={8}
+      cursor={"pointer"}
+      as={"a"}
+      href={href}
+      display={"inline-flex"}
+      alignItems={"center"}
+      justifyContent={"center"}
+      transition={"background 0.3s ease"}
+      _hover={{
+        bg: hover,
+        color: "white",
+      }}
+    >
+      <VisuallyHidden>{label}</VisuallyHidden>
       {children}
-    </Text>
+    </chakra.button>
   );
 };
 
-export default function LargeWithLogoLeft() {
+export default function SmallCentered() {
   return (
     <Box
-      bg={useColorModeValue("gray.50", "gray.800")}
+      bg={useColorModeValue("gray.50", "gray.900")}
       color={useColorModeValue("gray.700", "gray.200")}
     >
-      <Container as={Stack} maxW={"6xl"} py={10}>
-        <SimpleGrid
-          templateColumns={{ sm: "1fr 1fr", md: "2fr 1fr 1fr 1fr 1fr" }}
-          spacing={8}
-        >
-          <Stack spacing={6}>
-            <Box>
-              <Logo
-                color={useColorModeValue("gray.700", "white")}
-                width="255"
-                height="90"
-              />
-            </Box>
-            <Text fontSize={"sm"}>
-              Todos los derechos reservados. © 2022 Comunicaciones Galup, C.A.{" "}
-              <br />
-              RIF: J-29384802-4
-            </Text>
-          </Stack>
-          <Spacer />
-          <Stack align={"center"}>
-            <ListHeader>INICIO</ListHeader>
-            <Link href={"#"}>Precios</Link>
-            <Link href={"#"}>Términos de uso</Link>
-            <Link href={"#"}>¿Por qué preferirnos?</Link>
-            <Link href={"#"}>Preguntas Frecuentes</Link>
-          </Stack>
-          <Stack align={"center"}>
-            <ListHeader>Contáctanos</ListHeader>
-            <Link href={"#"}>Contacto</Link>
-            <Link href={"#"}>Facebook</Link>
-            <Link href={"#"}>Whatsapp</Link>
-            <Link href={"#"}>Instagram</Link>
-          </Stack>
-          <Stack align={"center"}>
-            <ListHeader>ZONA DE CLIENTES</ListHeader>
-            <Link href={"#"}>Consulta de Saldo</Link>
-            <Link href={"#"}>Reportar Pago</Link>
-            <Link href={"#"}>Uso de Datos</Link>
-            <Link href={"#"}>Zona WiFi Interlup</Link>
-            <Link href={"#"}>Speedtest</Link>
-          </Stack>
-        </SimpleGrid>
+      <Container
+        as={Stack}
+        maxW={"6xl"}
+        py={4}
+        spacing={4}
+        justify={"center"}
+        align={"center"}
+      >
+        <Logo width="255" height="90" />
+
+        <Stack direction={"row"} spacing={6}>
+          <Link href={"#"}>Inicio</Link>
+          <Link href={"#"}>Precios</Link>
+          <Link href={"#"}>Zona de Clientes</Link>
+          <Link href={"#"}>Contacto</Link>
+        </Stack>
       </Container>
+
+      <Box
+        borderTopWidth={1}
+        borderStyle={"solid"}
+        borderColor={useColorModeValue("gray.200", "gray.700")}
+      >
+        <Container
+          as={Stack}
+          maxW={"6xl"}
+          py={4}
+          direction={{ base: "column", md: "row" }}
+          spacing={4}
+          justify={{ base: "center", md: "space-between" }}
+          align={{ base: "center", md: "center" }}
+        >
+          <Text>
+            Todos los derechos reservados. © 2022 Comunicaciones Galup, C.A.
+            <br />
+            RIF: J-29384802-4{" "}
+          </Text>
+          <Stack direction={"row"} spacing={6}>
+            <SocialButton label={"Facebook"} href={"#"} hover={"#3b5998"}>
+              <FaFacebook />
+            </SocialButton>
+            <SocialButton label={"Whatsapp"} href={"#"} hover={"#25D366"}>
+              <FaWhatsapp />
+            </SocialButton>
+            <SocialButton label={"Instagram"} href={"#"} hover={"#833AB4"}>
+              <FaInstagram />
+            </SocialButton>
+          </Stack>
+        </Container>
+      </Box>
     </Box>
   );
 }

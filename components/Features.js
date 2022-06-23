@@ -6,8 +6,8 @@ import {
   Stack,
   Flex,
   Container,
+  useColorModeValue,
 } from "@chakra-ui/react";
-import { FcAssistant, FcDonate, FcInTransit } from "react-icons/fc";
 
 import {
   IconConsultoria,
@@ -33,7 +33,7 @@ const Feature = ({ title, text, icon }) => {
         {icon}
       </Flex>
       <Text fontWeight={600}>{title}</Text>
-      <Text align={"justify"} color={"gray.600"}>
+      <Text align={"justify"} color={useColorModeValue("gray.600", "gray.400")}>
         {text}
       </Text>
     </Stack>
