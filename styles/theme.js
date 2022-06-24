@@ -5,6 +5,11 @@ import { extendTheme } from "@chakra-ui/react";
 const config = {
   initialColorMode: "light",
   useSystemColorMode: false,
+  color: {
+    brand: {
+      400: "#e95c0a",
+    },
+  },
 };
 
 // 3. extend the theme

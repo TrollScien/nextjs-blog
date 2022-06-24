@@ -33,8 +33,11 @@ import {
   BsFacebook,
 } from "react-icons/bs";
 import { MdOutlineEmail, MdLocationPin, MdPhone } from "react-icons/md";
+import Map from "./Map";
 
-export default function Contact2() {
+export default function Contact() {
+  const finalRef = React.useRef(null);
+
   return (
     <Flex
       bg={useColorModeValue("gray.100", "gray.700")}
@@ -119,24 +122,7 @@ export default function Contact2() {
                     />
                   </Link>
                 </Tooltip>
-                <Tooltip
-                  label={"San Felipe, Yaracuy. Venezuela"}
-                  closeOnClick={false}
-                  hasArrow
-                >
-                  <IconButton
-                    aria-label="email"
-                    variant="ghost"
-                    size="lg"
-                    fontSize="3xl"
-                    icon={<MdLocationPin />}
-                    _hover={{
-                      bg: "red.500",
-                      color: "white",
-                    }}
-                    isRound
-                  />
-                </Tooltip>
+                <Map />
               </Stack>
 
               <Box
@@ -154,6 +140,7 @@ export default function Contact2() {
                         <InputLeftElement
                           pointerEvents="none"
                           children={<BsPerson color="gray.800" />}
+                          ref={finalRef}
                         />
                         <Input type="text" size="md" />
                       </InputGroup>
