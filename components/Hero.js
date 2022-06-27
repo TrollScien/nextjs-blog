@@ -5,7 +5,9 @@ import {
   Text,
   VStack,
   useBreakpointValue,
+  Heading,
 } from "@chakra-ui/react";
+import Logo from "./svg/Logo";
 
 export default function WithBackgroundImage() {
   return (
@@ -23,6 +25,7 @@ export default function WithBackgroundImage() {
         bgGradient={"linear(to-r, blackAlpha.600, transparent)"}
       >
         <Stack maxW={"2xl"} align={"flex-start"} spacing={6}>
+          <Logo />
           <Text
             color={"white"}
             fontWeight={700}
