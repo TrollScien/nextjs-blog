@@ -55,8 +55,8 @@ export default function SmallCentered() {
         <Stack direction={"row"} spacing={6}>
           <Link href={"#"}>Inicio</Link>
           <Link href={"#"}>Precios</Link>
-          <Link href={"#"}>Zona de Clientes</Link>
           <Link href={"#"}>Contacto</Link>
+          <Link href={"#"}>Zona de Clientes</Link>
         </Stack>
       </Container>
 
@@ -77,7 +77,9 @@ export default function SmallCentered() {
           <Text>
             Todos los derechos reservados. © 2022 Comunicaciones Galup, C.A.
             <br />
-            RIF: J-29384802-4{" "}
+            RIF: J-29384802-4
+            <br />
+            CONATEL: Habilitación N° HGTS-00574
           </Text>
           <Stack direction={"row"} spacing={6}>
             <SocialButton label={"Facebook"} href={"#"} hover={"#3b5998"}>

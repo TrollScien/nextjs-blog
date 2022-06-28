@@ -238,7 +238,7 @@ const MobileNavItem = ({ label, children, href }) => {
 const NAV_ITEMS = [
   {
     label: "INICIO",
-    href: "#",
+    href: "/",
   },
   {
     label: "SOBRE NOSOTROS",
@@ -278,23 +278,23 @@ const NAV_ITEMS = [
     children: [
       {
         label: "CONSULTA DE SALDO",
-        href: "#",
+        href: "clientes/consulta-saldo",
       },
       {
         label: "REPORTAR PAGO",
-        href: "#",
+        href: "clientes/reportar-pago",
       },
       {
         label: "USO DE DATOS",
-        href: "#",
+        href: "clientes/uso-datos",
       },
       {
         label: "ZONA WIFI INTERLUP",
-        href: "#",
+        href: "clientes/zona-wifi",
       },
       {
         label: "SPEEDTEST",
-        href: "#",
+        href: "clientes/speedtest",
       },
     ],
   },
