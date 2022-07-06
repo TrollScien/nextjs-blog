@@ -20,7 +20,7 @@ export default function Main() {
       <Pricing />
       <Testimonials />
       <Features />
-      <Faqs />
+      {/* <Faqs /> */}
       <Contact />
     </>
   );

@@ -134,7 +134,7 @@ const DesktopNav = () => {
 const DesktopSubNav = ({ label, href, subLabel }) => {
   return (
     <Link
-      href={href}
+      href={"/clientes/" + href}
       role={"group"}
       display={"block"}
       p={2}
@@ -150,7 +150,7 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
           >
             {label}
           </Text>
-          <Text fontSize={"sm"}>{subLabel}</Text>
+          {/* <Text fontSize={"sm"}>{subLabel}</Text> */}
         </Box>
         <Flex
           transition={"all .3s ease"}
@@ -242,24 +242,7 @@ const NAV_ITEMS = [
   },
   {
     label: "SOBRE NOSOTROS",
-    children: [
-      {
-        label: "¿POR QUÉ PREFERIRNOS?",
-        href: "#",
-      },
-      {
-        label: "NUESTRA MISIÓN",
-        href: "#",
-      },
-      {
-        label: "LO QUE HACEMOS",
-        href: "#",
-      },
-      {
-        label: "SERVICIOS",
-        href: "#",
-      },
-    ],
+    href: "about",
   },
   {
     label: "PRECIOS",
@@ -278,23 +261,23 @@ const NAV_ITEMS = [
     children: [
       {
         label: "CONSULTA DE SALDO",
-        href: "clientes/consulta-saldo",
+        href: "consulta-saldo",
       },
       {
         label: "REPORTAR PAGO",
-        href: "clientes/reportar-pago",
+        href: "reportar-pago",
       },
       {
         label: "USO DE DATOS",
-        href: "clientes/uso-datos",
+        href: "uso-datos",
       },
       {
         label: "ZONA WIFI INTERLUP",
-        href: "clientes/zona-wifi",
+        href: "zona-wifi",
       },
       {
         label: "SPEEDTEST",
-        href: "clientes/speedtest",
+        href: "speedtest",
       },
     ],
   },

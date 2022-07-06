@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Footer from "./Footer";
-
-import NavBar from "./NavBar";
+import Navbar from "./Navbar";
 
 export const siteTitle = "Galup Internet";
 
@@ -21,7 +20,7 @@ export default function Layout({ children, home }) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
-      <NavBar />
+      <Navbar />
       <main>{children}</main>
       <Footer />
     </>
