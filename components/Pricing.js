@@ -84,7 +84,7 @@ function PricingHogar({ service }) {
         </List>
         <Box w="80%" pt={7}>
           <Button w="full" colorScheme="red" variant="outline">
-            Start trial
+            Solicitar el servicio
           </Button>
         </Box>
       </VStack>
@@ -160,7 +160,7 @@ function PricingEmprendedor({ service }) {
           </List>
           <Box w="80%" pt={7}>
             <Button w="full" colorScheme="red">
-              Start trial
+              Solicitar el servicio
             </Button>
           </Box>
         </VStack>
@@ -207,7 +207,7 @@ function PricingCorporativo({ service }) {
         </List>
         <Box w="80%" pt={7}>
           <Button w="full" colorScheme="red" variant="outline">
-            Start trial
+            Solicitar el servicio
           </Button>
         </Box>
       </VStack>
@@ -221,7 +221,7 @@ export default function ThreeTierPricing() {
     setChecked(!checked);
   };
   return (
-    <Box py={12}>
+    <Box py={12} id="precios">
       <VStack spacing={2} textAlign="center">
         <Heading as="h1" fontSize="4xl">
           Planes que se adaptan a sus necesidades

@@ -30,7 +30,7 @@ export default function WithSubnavigation() {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Box position={"fixed"} width={"100%"} zIndex={200}>
+    <Box position={"fixed"} width={"100%"} zIndex={"sticky"}>
       <Flex
         bg={useColorModeValue("white", "gray.800")}
         color={useColorModeValue("gray.600", "white")}
@@ -69,8 +69,27 @@ export default function WithSubnavigation() {
           direction={"row"}
           spacing={6}
         >
-          <Button onClick={toggleColorMode}>
+          <Button
+            fontSize={"sm"}
+            fontWeight={400}
+            variant={"link"}
+            href={"#"}
+            onClick={toggleColorMode}
+          >
             {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+          </Button>
+          <Button
+            display={{ base: "none", md: "inline-flex" }}
+            fontSize={"sm"}
+            fontWeight={600}
+            color={"white"}
+            bg={"orange.500"}
+            href={"#"}
+            _hover={{
+              bg: "orange.400",
+            }}
+          >
+            Solicitar el servicio
           </Button>
         </Stack>
       </Flex>

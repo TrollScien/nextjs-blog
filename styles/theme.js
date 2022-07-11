@@ -6,8 +6,11 @@ const config = {
   initialColorMode: "light",
   useSystemColorMode: false,
   color: {
-    brand: {
-      400: "#e95c0a",
+    primary: {
+      500: "#e95c0a",
+    },
+    secondary: {
+      500: "#032d67",
     },
   },
 };
