@@ -4,7 +4,6 @@ import Features from "./Features";
 import Testimonials from "./Testimonials";
 import Pricing from "./Pricing";
 import Faqs from "./Faqs";
-import About from "../pages/about";
 import { useEffect } from "react";
 
 export default function Main() {
@@ -18,7 +17,6 @@ export default function Main() {
   return (
     <>
       <Hero />
-      <About />
       <Pricing />
       <Testimonials />
       <Features />

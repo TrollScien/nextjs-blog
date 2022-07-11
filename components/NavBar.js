@@ -269,7 +269,7 @@ const NAV_ITEMS = [
   },
   {
     label: "PREGUNTAS FRECUENTES",
-    href: "#",
+    href: "faqs",
   },
   {
     label: "CONTACTO",
