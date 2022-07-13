@@ -9,13 +9,13 @@ import {
   StackDivider,
   Icon,
   useColorModeValue,
+  Box,
 } from "@chakra-ui/react";
 import {
   IoAnalyticsSharp,
   IoLogoBitcoin,
   IoSearchSharp,
 } from "react-icons/io5";
-import Layout from "../components/layout";
 
 const Feature = ({ text, icon, iconBg }) => {
   return (
@@ -35,11 +35,11 @@ const Feature = ({ text, icon, iconBg }) => {
   );
 };
 
-export default function SplitWithImage() {
+export default function About() {
   return (
-    <Layout>
+    <Box pt={150}>
       <Container maxW={"8xl"} centerContent>
-        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={24} pt={200}>
+        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={24}>
           <Stack spacing={4}>
             <Text
               textTransform={"uppercase"}
@@ -237,6 +237,6 @@ export default function SplitWithImage() {
           </Flex>
         </SimpleGrid>
       </Container>
-    </Layout>
+    </Box>
   );
 }

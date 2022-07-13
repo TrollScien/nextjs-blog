@@ -18,7 +18,6 @@ import {
   ListItem,
 } from "@chakra-ui/react";
 import Image from "next/image";
-import Layout from "../components/layout";
 
 function FaqsServicio() {
   return (
@@ -288,42 +287,40 @@ function FaqsEmprendedor() {
 
 export default function Faqs() {
   return (
-    <Layout>
-      <Box bg={useColorModeValue("gray.100", "gray.700")} pt={230}>
-        <Container maxW={"8xl"}>
-          <Stack direction={"column"} spacing="24px">
-            <Box p={4} alignItems={"center"}>
-              <Stack p={4} spacing={0} align={"center"}>
-                <Heading>Preguntas Frecuentes</Heading>
-              </Stack>
-              <Tabs size="sm" isFitted align="center" isLazy>
-                <TabList>
-                  <Tab>Servicio</Tab>
-                  <Tab>Instalación</Tab>
-                  <Tab>Plan Hogar</Tab>
-                  <Tab>Plan Emprendedor</Tab>
-                </TabList>
+    <Box pt={220}>
+      <Container maxW={"8xl"}>
+        <Stack direction={"column"} spacing="24px">
+          <Box p={4} alignItems={"center"}>
+            <Stack pb={20} spacing={0} align={"center"}>
+              <Heading>Preguntas Frecuentes</Heading>
+            </Stack>
+            <Tabs size="sm" isFitted align="center" isLazy>
+              <TabList>
+                <Tab>Servicio</Tab>
+                <Tab>Instalación</Tab>
+                <Tab>Plan Hogar</Tab>
+                <Tab>Plan Emprendedor</Tab>
+              </TabList>
 
-                <TabPanels>
-                  <TabPanel>
-                    <FaqsServicio />
-                  </TabPanel>
-                  <TabPanel>
-                    <FaqsInstalacion />
-                  </TabPanel>
-                  <TabPanel>
-                    <FaqsHogar />
-                  </TabPanel>
-                  <TabPanel>
-                    <FaqsEmprendedor />
-                  </TabPanel>
-                </TabPanels>
-              </Tabs>
-            </Box>
-          </Stack>
-        </Container>
-      </Box>
-    </Layout>
+              <TabPanels>
+                <TabPanel>
+                  <FaqsServicio />
+                </TabPanel>
+                <TabPanel>
+                  <FaqsInstalacion />
+                </TabPanel>
+                <TabPanel>
+                  <FaqsHogar />
+                </TabPanel>
+                <TabPanel>
+                  <FaqsEmprendedor />
+                </TabPanel>
+              </TabPanels>
+            </Tabs>
+          </Box>
+        </Stack>
+      </Container>
+    </Box>
   );
 }
 

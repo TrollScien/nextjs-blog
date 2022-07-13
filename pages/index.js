@@ -4,11 +4,11 @@ import Main from "../components/Main";
 
 export default function Home() {
   return (
-    <Layout home>
+    <>
       <Head>
         <title>{siteTitle}</title>
       </Head>
       <Main />
-    </Layout>
+    </>
   );
 }

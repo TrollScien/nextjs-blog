@@ -15,6 +15,7 @@ import {
   useBreakpointValue,
   useDisclosure,
   useColorMode,
+  Input,
 } from "@chakra-ui/react";
 import {
   HamburgerIcon,
@@ -153,7 +154,7 @@ const DesktopNav = () => {
 const DesktopSubNav = ({ label, href, subLabel }) => {
   return (
     <Link
-      href={"/clientes/" + href}
+      href={href}
       role={"group"}
       display={"block"}
       p={2}
@@ -261,42 +262,42 @@ const NAV_ITEMS = [
   },
   {
     label: "SOBRE NOSOTROS",
-    href: "about",
+    href: "/nosotros",
   },
   {
-    label: "PRECIOS",
-    href: "#",
+    label: "PLANES",
+    href: "/planes",
   },
   {
     label: "PREGUNTAS FRECUENTES",
-    href: "faqs",
+    href: "/preguntas-frecuentes",
   },
   {
     label: "CONTACTO",
-    href: "#",
+    href: "/contacto",
   },
   {
     label: "ZONA DE CLIENTES",
     children: [
       {
         label: "CONSULTA DE SALDO",
-        href: "consulta-saldo",
+        href: "/clientes/consulta-saldo",
       },
       {
         label: "REPORTAR PAGO",
-        href: "reportar-pago",
+        href: "/clientes/reportar-pago",
       },
       {
         label: "USO DE DATOS",
-        href: "uso-datos",
+        href: "/clientes/uso-datos",
       },
       {
         label: "ZONA WIFI INTERLUP",
-        href: "zona-wifi",
+        href: "/clientes/zona-wifi",
       },
       {
         label: "SPEEDTEST",
-        href: "speedtest",
+        href: "/clientes/speedtest",
       },
     ],
   },
