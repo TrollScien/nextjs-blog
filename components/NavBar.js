@@ -111,8 +111,8 @@ const DesktopNav = () => {
   return (
     <Stack direction={"row"} spacing={4}>
       {NAV_ITEMS.map((navItem) => (
-        <NextLink href={navItem.href ?? "#"} passHref>
-          <Box key={navItem.label}>
+        <NextLink href={navItem.href ?? "#"} passHref key={navItem.label}>
+          <Box>
             <Popover trigger={"hover"} placement={"bottom-start"}>
               <PopoverTrigger>
                 <Link
