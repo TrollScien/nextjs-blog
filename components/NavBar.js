@@ -85,10 +85,10 @@ export default function WithSubnavigation() {
             fontSize={"sm"}
             fontWeight={600}
             color={"white"}
-            bg={"orange.500"}
+            bg={"primary.500"}
             href={"#"}
             _hover={{
-              bg: "orange.400",
+              bg: "secondary.500",
             }}
           >
             Solicitar el servicio

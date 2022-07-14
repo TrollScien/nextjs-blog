@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Footer from "./Footer";
 import Navbar from "./NavBar";
-import Navbar2 from "./NavBar2";
+// import Navbar2 from "./NavBar2";
 
 export const siteTitle = "Galup Internet";
 

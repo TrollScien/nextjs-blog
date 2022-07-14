@@ -5,7 +5,7 @@ import { extendTheme } from "@chakra-ui/react";
 const config = {
   initialColorMode: "light",
   useSystemColorMode: false,
-  color: {
+  colors: {
     primary: {
       500: "#e95c0a",
     },
@@ -16,6 +16,6 @@ const config = {
 };
 
 // 3. extend the theme
-const theme = extendTheme({ config });
+const theme = extendTheme(config);
 
 export default theme;
