@@ -1,5 +1,5 @@
 import ReactCanvasConfetti from "react-canvas-confetti";
-
+import { FormControl, Button } from "@chakra-ui/react";
 const canvasStyles = {
   position: "fixed",
   pointerEvents: "none",
@@ -11,7 +11,7 @@ const canvasStyles = {
 
 let animationInstance = null;
 
-export default function Confetti() {
+export default function Confetti({ placeholder }) {
   const makeShot = (particleRatio, opts) => {
     animationInstance &&
       animationInstance({
@@ -53,5 +53,18 @@ export default function Confetti() {
   const getInstance = (instance) => {
     animationInstance = instance;
   };
-  return <ReactCanvasConfetti refConfetti={getInstance} style={canvasStyles} />;
+  return (
+    <FormControl id="button" float="right">
+      <Button
+        variant="solid"
+        bg="#0D74FF"
+        color="white"
+        _hover={{}}
+        onClick={fire}
+      >
+        {placeholder}
+      </Button>
+      <ReactCanvasConfetti refConfetti={getInstance} style={canvasStyles} />
+    </FormControl>
+  );
 }
