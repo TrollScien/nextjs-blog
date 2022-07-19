@@ -61,33 +61,7 @@ export default function Speedtest() {
                 p={8}
               >
                 <Stack spacing={4}>
-                  <HStack>
-                    <Box>
-                      <FormControl id="contrato" isRequired>
-                        <FormLabel>Contrato</FormLabel>
-                        <InputGroup borderColor="#E0E1E7">
-                          <InputLeftElement
-                            pointerEvents="none"
-                            children={<MdTag color="gray.800" />}
-                            ref={finalRef}
-                          />
-                          <Input type="number" size="md" />
-                        </InputGroup>
-                      </FormControl>
-                    </Box>
-                    <Box>
-                      <FormControl id="ci_rif" isRequired>
-                        <FormLabel htmlFor="ci_rif">Cédula/RIF</FormLabel>
-                        <InputGroup borderColor="#E0E1E7">
-                          <InputLeftElement
-                            pointerEvents="none"
-                            children={<BsPerson color="gray.800" />}
-                          />
-                          <Input type="text" size="md" id="ci_rif" />
-                        </InputGroup>
-                      </FormControl>
-                    </Box>
-                  </HStack>
+                  <HStack></HStack>
 
                   <Stack spacing={10} pt={2}>
                     <Button

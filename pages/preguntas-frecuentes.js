@@ -25,7 +25,9 @@ function FaqsServicio() {
       {FAQS_ITEMS_SERVICIO.map((faqItem) => (
         <AccordionItem key={faqItem.title}>
           <h2>
-            <AccordionButton _expanded={{ bg: "blue.400", color: "white" }}>
+            <AccordionButton
+              _expanded={{ bg: "secondary.500", color: "white" }}
+            >
               <Box flex="1" textAlign="left">
                 {faqItem.title}
               </Box>
@@ -46,7 +48,9 @@ function FaqsInstalacion() {
       {FAQS_ITEMS_INSTALACION.map((faqItem) => (
         <AccordionItem key={faqItem.title}>
           <h2>
-            <AccordionButton _expanded={{ bg: "blue.400", color: "white" }}>
+            <AccordionButton
+              _expanded={{ bg: "secondary.500", color: "white" }}
+            >
               <Box flex="1" textAlign="left">
                 {faqItem.title}
               </Box>
@@ -60,7 +64,7 @@ function FaqsInstalacion() {
       ))}
       <AccordionItem>
         <h2>
-          <AccordionButton _expanded={{ bg: "blue.400", color: "white" }}>
+          <AccordionButton _expanded={{ bg: "secondary.500", color: "white" }}>
             <Box flex="1" textAlign="left">
               ¿Cómo puedo obtener las coordenadas de mi ubicación?
             </Box>
@@ -108,7 +112,9 @@ function FaqsHogar() {
       {FAQS_ITEMS_HOGAR.map((faqItem) => (
         <AccordionItem key={faqItem.title}>
           <h2>
-            <AccordionButton _expanded={{ bg: "blue.400", color: "white" }}>
+            <AccordionButton
+              _expanded={{ bg: "secondary.500", color: "white" }}
+            >
               <Box flex="1" textAlign="left">
                 {faqItem.title}
               </Box>
@@ -122,7 +128,7 @@ function FaqsHogar() {
       ))}
       <AccordionItem>
         <h2>
-          <AccordionButton _expanded={{ bg: "blue.400", color: "white" }}>
+          <AccordionButton _expanded={{ bg: "secondary.500", color: "white" }}>
             <Box flex="1" textAlign="left">
               ¿Cuál es el período de facturación?
             </Box>
@@ -148,7 +154,7 @@ function FaqsHogar() {
 
       <AccordionItem>
         <h2>
-          <AccordionButton _expanded={{ bg: "blue.400", color: "white" }}>
+          <AccordionButton _expanded={{ bg: "secondary.500", color: "white" }}>
             <Box flex="1" textAlign="left">
               ¿Cuántas películas puedo ver/descargar en un mes?
             </Box>
@@ -174,7 +180,7 @@ function FaqsHogar() {
 
       <AccordionItem>
         <h2>
-          <AccordionButton _expanded={{ bg: "blue.400", color: "white" }}>
+          <AccordionButton _expanded={{ bg: "secondary.500", color: "white" }}>
             <Box flex="1" textAlign="left">
               ¿Qué debo hacer si tengo problemas con el internet?
             </Box>
@@ -199,7 +205,7 @@ function FaqsHogar() {
 
       <AccordionItem>
         <h2>
-          <AccordionButton _expanded={{ bg: "blue.400", color: "white" }}>
+          <AccordionButton _expanded={{ bg: "secondary.500", color: "white" }}>
             <Box flex="1" textAlign="left">
               ¿Cómo puedo controlar mi consumo?
             </Box>
@@ -245,7 +251,9 @@ function FaqsEmprendedor() {
       {FAQS_ITEMS_EMPRENDEDOR.map((faqItem) => (
         <AccordionItem key={faqItem.title}>
           <h2>
-            <AccordionButton _expanded={{ bg: "blue.400", color: "white" }}>
+            <AccordionButton
+              _expanded={{ bg: "secondary.500", color: "white" }}
+            >
               <Box flex="1" textAlign="left">
                 {faqItem.title}
               </Box>
@@ -259,7 +267,7 @@ function FaqsEmprendedor() {
       ))}
       <AccordionItem>
         <h2>
-          <AccordionButton _expanded={{ bg: "blue.400", color: "white" }}>
+          <AccordionButton _expanded={{ bg: "secondary.500", color: "white" }}>
             <Box flex="1" textAlign="left">
               ¿La velocidad será reducida al superar la cuota de mi plan?
             </Box>
