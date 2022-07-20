@@ -64,17 +64,7 @@ export default function Speedtest() {
                   <HStack></HStack>
 
                   <Stack spacing={10} pt={2}>
-                    <Button
-                      loadingText="Submitting"
-                      size="lg"
-                      bg={"blue.400"}
-                      color={"white"}
-                      _hover={{
-                        bg: "blue.500",
-                      }}
-                    >
-                      Consultar
-                    </Button>
+                    <Text>1Gb/s</Text>
                   </Stack>
                 </Stack>
               </Box>

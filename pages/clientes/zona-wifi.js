@@ -39,8 +39,10 @@ export default function ZonaWifi() {
         p={{ base: 5, lg: 16 }}
       >
         <Box>
-          <VStack spacing={{ base: 4, md: 8, lg: 20 }}>
+          <VStack>
             <Heading
+              pt={{ base: 20 }}
+              pb={{ base: 4, md: 16, lg: 20 }}
               fontSize={{
                 base: "4xl",
                 md: "5xl",
@@ -49,12 +51,7 @@ export default function ZonaWifi() {
               Zona WiFi Interlup
             </Heading>
 
-            <Stack
-              spacing={{ base: 4, md: 8, lg: 20 }}
-              direction={{ base: "column", md: "row" }}
-            >
-              <FormConsultar />
-            </Stack>
+            <FormConsultar />
           </VStack>
         </Box>
       </Box>

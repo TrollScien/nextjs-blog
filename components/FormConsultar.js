@@ -56,7 +56,7 @@ export default function FormConsultar() {
       justify="center"
       id="contact"
     >
-      <Box borderRadius="lg" m={{ base: 5, md: 16, lg: 10 }}>
+      <Box borderRadius="lg">
         <Box>
           <VStack spacing={{ base: 4, md: 8, lg: 20 }}>
             <Stack
