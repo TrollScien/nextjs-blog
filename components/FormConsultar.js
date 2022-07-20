@@ -29,38 +29,28 @@ import { MdTag } from "react-icons/md";
 import MenuClientes from "./MenuClientes";
 import { Form, Formik, Field } from "formik";
 import Confetti from "./Confetti";
+import * as Yup from "yup";
+
+const ConsultarSchema = Yup.object().shape({
+  contrato: Yup.number()
+    .integer("El contrato debe ser un número entero")
+    .positive("El contrato debe ser un número positivo")
+    .moreThan(0, "¡El número de contrato es incorrecto! 😓")
+    .required("El número de contrato es requerido"),
+  tipo: Yup.string().required("El tipo de identificación es requerido"),
+  rif_ci: Yup.number()
+    .min(100000, "¡El número de cédula o RIF debe ser mayor a 5 caracteres!")
+    .max(999999999, "¡El número de cédula o RIF es incorrecto 😓!")
+    .required("El número de cédula o RIF es requerido"),
+});
 
 export default function FormConsultar() {
   const publicar = (values) => {
     console.log(values.contrato);
     console.log(values.tipo);
     console.log(values.rif_ci);
+    alert(JSON.stringify(values, null, 2));
   };
-  function validateContrato(value) {
-    let error;
-    if (!value) {
-      error = "El Contrato es requerido";
-    } else if (value.length < 2) {
-      error = "El Contrato es incorrecto😱";
-    }
-    return error;
-  }
-  function validateRifCi(value) {
-    let error;
-    if (!value) {
-      error = "La Cédula/RIF es requerido";
-    } else if (value.length < 5) {
-      error = "La Cédula o RIF debe ser mayor a 5 caracteres😱";
-    }
-    return error;
-  }
-  function validateTipoCliente(value) {
-    let error;
-    if (!value) {
-      error = "El tipo de identificación es requerido";
-    }
-    return error;
-  }
 
   return (
     <Flex
@@ -94,107 +84,107 @@ export default function FormConsultar() {
                     tipo: "",
                     rif_ci: "",
                   }}
-                  onSubmit={publicar}
+                  validationSchema={ConsultarSchema}
+                  // onSubmit={publicar}
+                  onSubmit={(values, actions) => {
+                    setTimeout(() => {
+                      alert(JSON.stringify(values, null, 2));
+                      actions.setSubmitting(false);
+                    }, 1000);
+                  }}
                 >
-                  <VStack spacing={5}>
-                    <Stack direction={["column", "column", "row"]} spacing={4}>
-                      <Field
-                        name="contrato"
-                        validate={validateContrato}
-                        type="number"
+                  <Form>
+                    <VStack spacing={5}>
+                      <Stack
+                        direction={["column", "column", "row"]}
+                        spacing={4}
                       >
-                        {({ field, form }) => (
-                          <FormControl
-                            isRequired
-                            isInvalid={
-                              form.errors.contrato && form.touched.contrato
-                            }
-                          >
-                            <FormLabel>Contrato</FormLabel>
-                            <InputGroup borderColor="#E0E1E7">
-                              <InputLeftElement
-                                pointerEvents="none"
-                                children={<MdTag color="gray.800" />}
-                              />
-                              <Input {...field} type="text" size="md" />
-                            </InputGroup>
-                            <FormErrorMessage>
-                              {form.errors.contrato}
-                            </FormErrorMessage>
-                          </FormControl>
-                        )}
-                      </Field>
+                        <Field name="contrato" type="number">
+                          {({ field, form }) => (
+                            <FormControl
+                              isRequired
+                              isInvalid={
+                                form.errors.contrato && form.touched.contrato
+                              }
+                            >
+                              <FormLabel>Contrato</FormLabel>
+                              <InputGroup borderColor="#E0E1E7">
+                                <InputLeftElement
+                                  pointerEvents="none"
+                                  children={<MdTag color="gray.800" />}
+                                />
+                                <Input {...field} type="number" size="md" />
+                              </InputGroup>
+                              <FormErrorMessage>
+                                {form.errors.contrato}
+                              </FormErrorMessage>
+                            </FormControl>
+                          )}
+                        </Field>
 
-                      <Field
-                        name="tipo"
-                        validate={validateTipoCliente}
-                        as="select"
-                      >
-                        {({ field, form }) => (
-                          <FormControl
-                            isRequired
-                            isInvalid={form.errors.tipo && form.touched.tipo}
-                          >
-                            <FormLabel>Tipo</FormLabel>
-                            <InputGroup borderColor="#E0E1E7">
-                              <Select
-                                {...field}
-                                borderColor="#E0E1E7"
-                                variant="outline"
-                                placeholder="Seleccione"
-                                size="md"
-                              >
-                                <option value="V">V</option>
-                                <option value="J">J</option>
-                                <option value="E">E</option>
-                                <option value="P">P</option>
-                                <option value="G">G</option>
-                              </Select>
-                            </InputGroup>
-                            <FormErrorMessage>
-                              {form.errors.tipo}
-                            </FormErrorMessage>
-                          </FormControl>
-                        )}
-                      </Field>
+                        <Field name="tipo" as="select">
+                          {({ field, form }) => (
+                            <FormControl
+                              isRequired
+                              isInvalid={form.errors.tipo && form.touched.tipo}
+                            >
+                              <FormLabel>Tipo</FormLabel>
+                              <InputGroup borderColor="#E0E1E7">
+                                <Select
+                                  {...field}
+                                  borderColor="#E0E1E7"
+                                  variant="outline"
+                                  placeholder="Seleccione"
+                                  size="md"
+                                >
+                                  <option value="V">V</option>
+                                  <option value="J">J</option>
+                                  <option value="E">E</option>
+                                  <option value="P">P</option>
+                                  <option value="G">G</option>
+                                </Select>
+                              </InputGroup>
+                              <FormErrorMessage>
+                                {form.errors.tipo}
+                              </FormErrorMessage>
+                            </FormControl>
+                          )}
+                        </Field>
 
-                      <Field
-                        name="rif_ci"
-                        validate={validateRifCi}
-                        type="number"
-                      >
-                        {({ field, form }) => (
-                          <FormControl
-                            isRequired
-                            isInvalid={
-                              form.errors.rif_ci && form.touched.rif_ci
-                            }
-                          >
-                            <FormLabel>Cédula/RIF</FormLabel>
-                            <InputGroup borderColor="#E0E1E7">
-                              <InputLeftElement
-                                pointerEvents="none"
-                                children={<BsPerson color="gray.800" />}
-                              />
-                              <Input
-                                {...field}
-                                type="email"
-                                size="md"
-                                id="email"
-                              />
-                            </InputGroup>
-                            <FormErrorMessage>
-                              {form.errors.rif_ci}
-                            </FormErrorMessage>
-                          </FormControl>
-                        )}
-                      </Field>
-                    </Stack>
+                        <Field name="rif_ci" type="number">
+                          {({ field, form }) => (
+                            <FormControl
+                              isRequired
+                              isInvalid={
+                                form.errors.rif_ci && form.touched.rif_ci
+                              }
+                            >
+                              <FormLabel>Cédula/RIF</FormLabel>
+                              <InputGroup borderColor="#E0E1E7">
+                                <InputLeftElement
+                                  pointerEvents="none"
+                                  children={<BsPerson color="gray.800" />}
+                                />
+                                <Input
+                                  {...field}
+                                  type="number"
+                                  size="md"
+                                  id="rif_ci"
+                                />
+                              </InputGroup>
+                              <FormErrorMessage>
+                                {form.errors.rif_ci}
+                              </FormErrorMessage>
+                            </FormControl>
+                          )}
+                        </Field>
+                      </Stack>
 
-                    <FormControl id="button" float="right">
-                      <Confetti placeholder={"Enviar Mensaje"} />
-                    </FormControl>
-                  </VStack>
+                      <FormControl id="button" float="right">
+                        <Confetti placeholder={"Consultar"} />
+                      </FormControl>
+                    </VStack>
+                  </Form>
                 </Formik>
               </Box>
             </Stack>

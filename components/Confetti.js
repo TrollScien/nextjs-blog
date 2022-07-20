@@ -57,8 +57,9 @@ export default function Confetti({ placeholder }) {
     <FormControl id="button" float="right">
       <Button
         variant="solid"
-        bg="#0D74FF"
+        bg="secondary.500"
         color="white"
+        type="submit"
         _hover={{}}
         onClick={fire}
       >
