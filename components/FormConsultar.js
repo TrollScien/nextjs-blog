@@ -41,7 +41,6 @@ const ConsultarSchema = Yup.object().shape({
     .positive("El contrato debe ser un número positivo")
     .moreThan(0, "¡El número de contrato es incorrecto! 😓")
     .required("El número de contrato es requerido"),
-  tipo: Yup.string().required("El tipo de identificación es requerido"),
   rif_ci: Yup.number()
     .min(100000, "¡El número de cédula o RIF debe ser mayor a 5 caracteres!")
     .max(999999999, "¡El número de cédula o RIF es incorrecto 😓!")
@@ -57,11 +56,7 @@ export default function FormConsultar() {
       justify="center"
       id="contact"
     >
-      <Box
-        borderRadius="lg"
-        m={{ base: 5, md: 16, lg: 10 }}
-        p={{ base: 5, lg: 16 }}
-      >
+      <Box borderRadius="lg" m={{ base: 5, md: 16, lg: 10 }}>
         <Box>
           <VStack spacing={{ base: 4, md: 8, lg: 20 }}>
             <Stack
@@ -159,37 +154,6 @@ export default function FormConsultar() {
                                 </InputGroup>
                                 <FormErrorMessage>
                                   {form.errors.contrato}
-                                </FormErrorMessage>
-                              </FormControl>
-                            )}
-                          </Field>
-
-                          <Field name="tipo" as="select">
-                            {({ field, form }) => (
-                              <FormControl
-                                isRequired
-                                isInvalid={
-                                  form.errors.tipo && form.touched.tipo
-                                }
-                              >
-                                <FormLabel>Tipo</FormLabel>
-                                <InputGroup borderColor="#E0E1E7">
-                                  <Select
-                                    {...field}
-                                    borderColor="#E0E1E7"
-                                    variant="outline"
-                                    placeholder="Seleccione"
-                                    size="md"
-                                  >
-                                    <option value="V">V</option>
-                                    <option value="J">J</option>
-                                    <option value="E">E</option>
-                                    <option value="P">P</option>
-                                    <option value="G">G</option>
-                                  </Select>
-                                </InputGroup>
-                                <FormErrorMessage>
-                                  {form.errors.tipo}
                                 </FormErrorMessage>
                               </FormControl>
                             )}
