@@ -36,6 +36,28 @@ import { MdOutlineEmail, MdLocationPin, MdPhone } from "react-icons/md";
 import Map from "./Map";
 // import ReactCanvasConfetti from "react-canvas-confetti";
 import Confetti from "./Confetti";
+import { Form, Formik, Field } from "formik";
+import * as Yup from "yup";
+
+import confetti from "canvas-confetti";
+
+/* A validation schema for the form. */
+const ContactoSchema = Yup.object().shape({
+  nombre: Yup.string()
+    .min(3, "El nombre debe tener más de 3 caracteres")
+    .max(50, "El nombre debe tener menos de 50 caracteres")
+    .required("El nombre es requerido")
+    .trim(),
+  email: Yup.string()
+    .email("Debe colocar un correo válido")
+    .required("El correo es requerido"),
+  telefono: Yup.string().required("El teléfono es requerido"),
+  asunto: Yup.string().required("El asunto es requerido"),
+  servicios: Yup.string().required("El servicio es requerido"),
+  mensaje: Yup.string()
+    .max(255, "El mensaje no puede superar los 255 caracteres")
+    .required("El mensaje es requerido"),
+});
 
 export default function Contact() {
   const finalRef = React.useRef(null);

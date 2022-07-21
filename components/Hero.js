@@ -14,7 +14,7 @@ export default function WithBackgroundImage() {
     <Flex
       w={"full"}
       h={"100vh"}
-      backgroundImage={"url(/images/1.jpg)"}
+      backgroundImage={"url(/images/slider1.jpg)"}
       backgroundSize={"cover"}
       backgroundPosition={"center center"}
     >

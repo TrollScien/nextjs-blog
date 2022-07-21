@@ -39,11 +39,11 @@ const ConsultarSchema = Yup.object().shape({
   contrato: Yup.number()
     .integer("El contrato debe ser un número entero")
     .positive("El contrato debe ser un número positivo")
-    .moreThan(0, "¡El número de contrato es incorrecto! 😓")
+    .moreThan(0, "El número de contrato es incorrecto")
     .required("El número de contrato es requerido"),
   rif_ci: Yup.number()
-    .min(100000, "¡El número de cédula o RIF debe ser mayor a 5 caracteres!")
-    .max(999999999, "¡El número de cédula o RIF es incorrecto 😓!")
+    .min(100000, "El número de cédula o RIF debe ser mayor a 5 caracteres")
+    .max(999999999, "El número de cédula o RIF es incorrecto")
     .required("El número de cédula o RIF es requerido"),
 });
 
@@ -67,7 +67,7 @@ export default function FormConsultar() {
               <Box
                 bg={useColorModeValue("white", "gray.600")}
                 borderRadius="lg"
-                p={8}
+                p={10}
                 color={useColorModeValue("gray.700", "whiteAlpha.900")}
                 shadow="base"
               >
@@ -94,7 +94,7 @@ export default function FormConsultar() {
                       //     y: Math.random() - 0.2,
                       //   },
                       // });
-                      var duration = 1.2 * 1000;
+                      var duration = 0.3 * 1000;
                       var end = Date.now() + duration;
 
                       (function frame() {
@@ -152,6 +152,7 @@ export default function FormConsultar() {
                                   />
                                   <Input {...field} type="number" size="md" />
                                 </InputGroup>
+
                                 <FormErrorMessage>
                                   {form.errors.contrato}
                                 </FormErrorMessage>
@@ -180,6 +181,7 @@ export default function FormConsultar() {
                                     id="rif_ci"
                                   />
                                 </InputGroup>
+
                                 <FormErrorMessage>
                                   {form.errors.rif_ci}
                                 </FormErrorMessage>

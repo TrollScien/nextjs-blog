@@ -15,7 +15,7 @@ export default function MenuClientes() {
       <Box
         w={"full"}
         bg={useColorModeValue("white", "gray.900")}
-        boxShadow={"md"}
+        shadow="base"
         rounded={"lg"}
         p={6}
         textAlign={"start"}
