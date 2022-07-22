@@ -38,13 +38,12 @@ import confetti from "canvas-confetti";
 const ConsultarSchema = Yup.object().shape({
   contrato: Yup.number()
     .integer("El contrato debe ser un número entero")
-    .positive("El contrato debe ser un número positivo")
     .moreThan(0, "El número de contrato es incorrecto")
     .required("El número de contrato es requerido"),
   rif_ci: Yup.number()
-    .min(100000, "El número de cédula o RIF debe ser mayor a 5 caracteres")
+    .min(100000, "Debe ser mayor a 5 caracteres")
     .max(999999999, "El número de cédula o RIF es incorrecto")
-    .required("El número de cédula o RIF es requerido"),
+    .required("El número de Cédula/RIF es requerido"),
 });
 
 export default function FormConsultar() {
@@ -82,48 +81,16 @@ export default function FormConsultar() {
                     setTimeout(() => {
                       // alert(JSON.stringify(values, null, 2));
                       actions.setSubmitting(false);
-                      // confetti({
-                      //   particleCount: 200,
-                      //   startVelocity: 30,
-                      //   spread: 360,
-                      //   gravity: 1.2,
-                      //   // origin: { y: 0 },
-                      //   origin: {
-                      //     x: Math.random(),
-                      //     // since they fall down, start a bit higher than random
-                      //     y: Math.random() - 0.2,
-                      //   },
-                      // });
-                      var duration = 0.3 * 1000;
-                      var end = Date.now() + duration;
-
-                      (function frame() {
-                        // launch a few confetti from the left edge
-                        confetti({
-                          particleCount: 7,
-                          angle: 60,
-                          spread: 55,
-                          origin: { x: 0 },
-                        });
-                        // and launch a few from the right edge
-                        confetti({
-                          particleCount: 7,
-                          angle: 120,
-                          spread: 55,
-                          origin: { x: 1 },
-                        });
-
-                        // keep going until we are out of time
-                        if (Date.now() < end) {
-                          requestAnimationFrame(frame);
-                        }
-                      })();
+                      confetti({
+                        particleCount: 150,
+                        spread: 180,
+                      });
 
                       toast({
                         title: "Felicidades.",
                         description: "No tiene deuda pendiente.",
                         status: "success",
-                        duration: 9000,
+                        duration: 5000,
                         isClosable: true,
                       });
                     }, 1000);
